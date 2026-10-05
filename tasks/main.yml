@@ -1,8 +1,8 @@
 ---
 - name: Configure Master machine
-  include: master.yml
+  ansible.builtin.include_tasks: master.yml
   when: replication_role == 'master'
 
 - name: Configure Standby
-  include: standby.yml
+  ansible.builtin.include_tasks: standby.yml
   when: replication_role == 'standby'
